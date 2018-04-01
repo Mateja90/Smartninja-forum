@@ -11,4 +11,17 @@
   <br />
   <p>{{topic.author_email}}</p>
 </div>
+<br />
+<hr />
+<div class="row">
+  <form action="/topic/{{topic.key.id()}}/comment/add" method = "post">
+    <input type="hidden" name="csrf_token" value="{{token}}" />
+     <div class="form-group">
+    <label>Comment</label>
+    <textarea type="text" class="form-control" rows="6" name="commenttext" required></textarea>
+  </div>
+    <br />
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
 {%endblock content%}
